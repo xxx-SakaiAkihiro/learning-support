@@ -43,6 +43,14 @@ create table companies (
   , constraint companies_PKC primary key (id)
 ) ;
 
+--企業＆管理者の中間テーブル
+drop table if exists admins_companies cascade;
+
+create table companies (
+  admins_id integer
+  , companies_id integer 
+) ;
+
 -- 日報
 drop table if exists daily_reports cascade;
 
